@@ -9,7 +9,7 @@ galleryRef.insertAdjacentHTML('afterbegin', galleryCardSet);
 galleryRef.addEventListener('click', onOpenModal);
 
 function createGalleryCard({ preview, original, description }) {
-    return `<div class="gallery__item">
+    return `<li class="gallery__item">
     <a class="gallery__link" href="${original}">
       <img
         class="gallery__image"
@@ -17,19 +17,10 @@ function createGalleryCard({ preview, original, description }) {
         alt="${description}"
       />
     </a>
-  </div>`;
+  </li>`;
 }
 
-function onOpenModal(e) {
-    e.preventDefault();
-    const isImage = e.target.classList.contains('gallery__image');
-
-    if (!isImage) {
-        return;
-    }
-    return new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionDelay: 250,
-        closeText: 'Close',
-    });
-}
+let lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+});
