@@ -10,28 +10,34 @@ galleryRef.addEventListener('click', onOpenModal);
 
 function createGalleryCard({ preview, original, description }) {
     return `<div class="gallery__item">
-    <img src="${preview}" alt="${description}" data-original="${original}" class="gallery__image">
+    <a class="gallery__link" href="${original}">
+      <img
+        class="gallery__image"
+        src="${preview}"
+        data-source="${original}"
+        alt="${description}"
+      />
+    </a>
   </div>`;
 }
 
 function onOpenModal(e) {
+    e.preventDefault();
     const isImage = e.target.classList.contains('gallery__image');
 
     if (!isImage) {
         return;
     }
-    createModal(e.target);
+    createModal(e.target).show();
     window.addEventListener('keyup', onCloseModalKeyUp);
 }
 
 function createModal(params) {
-    const instance = basicLightbox.create(`
+    return basicLightbox.create(`
         <div class="modal">
-        <img src="${params.dataset.original}" alt="${params.alt}" />
+        <img src="${params.dataset.source}" alt="${params.alt}" />
         </div>
     `);
-
-    instance.show();
 }
 
 function onCloseModalKeyUp(e) {
@@ -39,5 +45,5 @@ function onCloseModalKeyUp(e) {
 
     if (e.code !== 'Escape') return;
     backDrop.remove();
-    window.removeEventListener('keyup', onCloseModal);
+    window.removeEventListener('keyup', onCloseModalKeyUp);
 }
