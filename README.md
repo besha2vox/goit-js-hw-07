@@ -25,18 +25,30 @@ https://user-images.githubusercontent.com/17479434/127711719-4e293f5b-fbaa-4851-
   </li>
   <li>
     Подключение скрипта и стилей библиотеки модального окна
-<a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">basicLightbox</a>. Используй
-<a href="https://www.jsdelivr.com/package/npm/basiclightbox?path=dist" target="_blank" rel="noopener noreferrer">CDN сервис jsdelivr</a>
+<a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">
+  basicLightbox
+    </a>
+    . Используй
+<a href="https://www.jsdelivr.com/package/npm/basiclightbox?path=dist" target="_blank" rel="noopener noreferrer">
+  CDN сервис jsdelivr
+    </a>
 и добавь в проект ссылки на минифицированные (<code>.min</code>) файлы библиотеки.
   </li>
   <li>
     Открытие модального окна по клику на элементе галереи. Для этого ознакомься с
-<a href="https://github.com/electerious/basicLightbox#readme" target="_blank" rel="noopener noreferrer">документацией</a> и
-<a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">примерами</a>.
+<a href="https://github.com/electerious/basicLightbox#readme" target="_blank" rel="noopener noreferrer">
+  документацией
+    </a>
+    и
+<a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">
+  примерами
+    </a>.
   </li>
   <li>
     Замена значения атрибута <code>src</code> элемента <code>&lt;img&gt;</code> в модальном окне перед открытием. Используй готовую разметку модального окна с изображением из примеров библиотеки 
-    <a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">basicLightbox</a>.
+    <a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">
+      basicLightbox
+    </a>.
   </li>
 </ol>
 
@@ -77,7 +89,22 @@ https://user-images.githubusercontent.com/17479434/127714821-4b7527c8-01db-42d3-
 
 Выполняй это задание в файлах 02-lightbox.html и 02-lightbox.js. Разбей его на несколько подзадач:
 
-Создание и рендер разметки по массиву данных galleryItems и предоставленному шаблону элемента галереи. Используй готовый код из первого задания.
-Подключение скрипта и стилей библиотеки используя CDN сервис cdnjs. Необходимо добавить ссылки на два файла: simple-lightbox.min.js и simple-lightbox.min.css.
-Инициализация библиотеки после того как элементы галереи созданы и добавлены в div.gallery. Для этого ознакомься с документацией SimpleLightbox - в первую очередь секции «Usage» и «Markup».
-Посмотри в документации секцию «Options» и добавь отображение подписей к изображениям из атрибута alt. Пусть подпись будет снизу и появляется через 250 миллисекунд после открытия изображения.
+<ol>
+  <li>
+    Создание и рендер разметки по массиву данных <code>galleryItems</code> и предоставленному шаблону элемента галереи. Используй готовый код из первого
+задания.
+  </li>
+  <li>Подключение скрипта и стилей библиотеки используя
+<a href="https://cdnjs.com/libraries/simplelightbox" target="_blank" rel="noopener noreferrer">CDN сервис cdnjs</a>. 
+    Необходимо добавить ссылки на два файла: <code>simple-lightbox.min.js</code> и <code>simple-lightbox.min.css</code>.
+  </li>
+  <li>Инициализация библиотеки после того как элементы галереи созданы и добавлены в <code>div.gallery</code>. Для этого ознакомься с документацией
+<a href="https://simplelightbox.com/" target="_blank" rel="noopener noreferrer">
+  SimpleLightbox
+    </a>
+    - в первую очередь секции «Usage» и «Markup».
+  </li>
+  <li>
+    Посмотри в документации секцию «Options» и добавь отображение подписей к изображениям из атрибута <code>alt</code>. Пусть подпись будет снизу и появляется через 250 миллисекунд после открытия изображения.
+  </li>
+</ol>
