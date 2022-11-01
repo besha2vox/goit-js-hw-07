@@ -8,6 +8,8 @@ galleryRef.insertAdjacentHTML('afterbegin', galleryCardSet);
 
 galleryRef.addEventListener('click', onOpenModal);
 
+let modal; // = basicLightbox.create
+
 function createGalleryCard({ preview, original, description }) {
     return `<div class="gallery__item">
     <a class="gallery__link" href="${original}">
@@ -29,21 +31,26 @@ function onOpenModal(e) {
         return;
     }
     createModal(e.target).show();
-    window.addEventListener('keyup', onCloseModalKeyUp);
 }
 
 function createModal(params) {
-    return basicLightbox.create(`
-        <div class="modal">
-        <img src="${params.dataset.source}" alt="${params.alt}" />
-        </div>
-    `);
+    const html = `<div class="modal">
+  <img src="${params.dataset.source}" alt="${params.alt}" />
+  </div>`;
+
+    modal = basicLightbox.create(html, {
+        onShow: () => {
+            window.addEventListener('keyup', onCloseModalKeyUp);
+        },
+        onClose: () => {
+            window.removeEventListener('keyup', onCloseModalKeyUp);
+        },
+    });
+    return modal;
 }
 
 function onCloseModalKeyUp(e) {
-    const backDrop = document.querySelector('.basicLightbox');
-
+    console.log(e.code);
     if (e.code !== 'Escape') return;
-    backDrop.remove();
-    window.removeEventListener('keyup', onCloseModalKeyUp);
+    modal.close();
 }
